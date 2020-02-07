@@ -166,6 +166,11 @@ func removeRun(cmd *cobra.Command, args []string) error {
 		if err != nil && !os.IsNotExist(err) {
 			return errors.Wrap(err, "something went wrong when trying to delete the added go.mod")
 		}
+
+		err = os.Remove(filepath.Join(deleted.AbsPath, "go.sum"))
+		if err != nil && !os.IsNotExist(err) {
+			return errors.Wrap(err, "something went wrong when trying to delete the added go.sum")
+		}
 	}
 
 	// Persist our new set of replaces

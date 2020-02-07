@@ -7,5 +7,3 @@ require (
 	github.com/pkg/errors v0.8.1
 	github.com/spf13/cobra v0.0.5
 )
-
-replace github.com/aarondl/ultimateq => /home/aaron/gop/src/github.com/aarondl/ultimateq
